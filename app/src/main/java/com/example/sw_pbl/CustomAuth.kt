@@ -1,79 +1,50 @@
-//import android.annotation.SuppressLint
-//import android.util.Log
-//import androidx.compose.material3.Text
-//import androidx.compose.material3.TextField
-//import androidx.compose.runtime.Composable
-//import androidx.compose.runtime.mutableStateOf
-//import androidx.compose.runtime.remember
-//import androidx.compose.runtime.getValue
-//import androidx.compose.runtime.setValue
-//import com.firebase.ui.auth.AuthUI.TAG
-//import com.google.firebase.auth.ktx.auth
-//import com.google.firebase.ktx.Firebase
-//
-//@Composable
-//fun CustomAuth() {
-//    // Remember the user input
-//    var email by remember { mutableStateOf("") }
-//    var password by remember { mutableStateOf("") }
-////
-////    LoginPage(
-////        onID = { email = it },
-////        onPW = { password = it },
-////        onLoginButton = { signIn(email, password) }
-////    )
-//
-//    // Collect user inputs
-//    TextField(
-//        value = email,
-//        onValueChange = { newEmail -> email = newEmail },
-//        label = { Text("Email") }
+import android.widget.Toast
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
+import com.google.firebase.firestore.FirebaseFirestore
+import androidx.compose.runtime.setValue
+
+@Composable
+fun CustomAuth() {
+    var idtext by remember { mutableStateOf("") }
+    var pwtext by remember { mutableStateOf("") }
+    val onidValueChange = { it: String ->
+        idtext = it
+    }
+    val onpwValueChange = { it: String ->
+        pwtext = it
+    }
+    val context = LocalContext.current
+    val db = FirebaseFirestore.getInstance()
+    val accountCollectionName = "login_account" // 파베 hjtestpbl 컬렉션
+
+//    CustomLoginviewS8(
+//        onBtnLoginTapped = {
+//            db.collection(accountCollectionName)
+//                .get()
+//                .addOnSuccessListener { documents ->
+//                    for (document in documents) {
+//                        val id = document.getString("ID")
+//                        val pw = document.getString("PW")
+//                        if (id == idtext && pw == pwtext) {
+//                            Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show()
+//                            break
+//                        }
+////                                        else
+////                                        {
+////                                            Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
+////                                            break
+////                                        }
+//                    }
+//                }
+//        }//: onLoginButton
+//        ,
+//        idtext = idtext,
+//        onidValueChange = onidValueChange,
+//        pwtext = pwtext,
+//        onpwValueChange = onpwValueChange
 //    )
-//    TextField(
-//        value = password,
-//        onValueChange = { newPassword -> password = newPassword },
-//        label = { Text("Password") }
-//    )
-//
-////    LoginPage(
-////        onLoginButton = { signIn(email, password) }
-////    )
-//}
-////
-////@SuppressLint("RestrictedApi")
-////private fun signIn(email: String, password: String) {
-////
-////    val auth = Firebase.auth
-////    auth.signInWithEmailAndPassword(email, password)
-////        .addOnCompleteListener { task ->
-////            if (task.isSuccessful) {
-////                // Sign in success, update UI with the signed-in user's information
-////                Log.d(TAG, "signInWithEmail:success")
-////                val user = auth.currentUser
-////                // update UI here
-////            } else {
-////                // If sign in fails, display a message to the user.
-////                Log.w(TAG, "signInWithEmail:failure", task.exception)
-////                // update UI here
-////            }
-////        }
-////}
-//
-//
-//@SuppressLint("RestrictedApi")
-//private fun signIn(email: String, password: String) {
-//    val auth = Firebase.auth
-//    auth.signInWithEmailAndPassword(email, password)
-//        .addOnCompleteListener { task ->
-//            if (task.isSuccessful) {
-//                // Sign in success, update UI with the signed-in user's information
-//                Log.d(TAG, "signInWithEmail:success")
-//                val user = auth.currentUser
-//                // update UI here
-//            } else {
-//                // If sign in fails, display a message to the user.
-//                Log.w(TAG, "signInWithEmail:failure", task.exception)
-//                // update UI here
-//            }
-//        }
-//}
+}
