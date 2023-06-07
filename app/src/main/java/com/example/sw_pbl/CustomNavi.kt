@@ -1,6 +1,9 @@
+import android.content.Intent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
@@ -13,6 +16,12 @@ import com.google.relay.compose.BoxScopeInstance.columnWeight
 import com.google.relay.compose.BoxScopeInstance.rowWeight
 import com.google.relay.compose.RelayContainer
 import kotlinx.coroutines.delay
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
+import com.example.sw_pbl.customadmin.CustomAdmin
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
 
 @Composable
 fun CustomNavi() {
@@ -25,7 +34,9 @@ fun CustomNavi() {
     ) {
         composable("Loading") {
             CustomDelayLoadingView(
-                modifier= Modifier.rowWeight(1.0f).columnWeight(1.0f),
+                modifier= Modifier
+                    .rowWeight(1.0f)
+                    .columnWeight(1.0f),
                 navController= navController
             )
         }
@@ -34,54 +45,74 @@ fun CustomNavi() {
                 RelayContainer {
                     Mainview(
                             onLoginAdmin = {
-                                           navController.navigate("Admin")
+                                           navController.navigate("CustomLoginviewS8")
                             },
                             onMenuJA = {},
                             onMenuAram = {},
                             onMenuEdu1 = {},
                             onMenuEdu2 = {},
-                            modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
+                            modifier = Modifier
+                                .rowWeight(1.0f)
+                                .columnWeight(1.0f)
                     )                }
             }
 
         }
 
-        composable("Admin") {
+        composable("CustomLoginviewS8") {
             MaterialTheme {
                 RelayContainer {
-//                    LoginviewS8(
-//                        onLoginBtnTapped = {},
-//                        pwText = "PW ",
-//                        idText = "ID  ",
-//                        titleLoadingviewTextContent = buildAnnotatedString {
-//                            withStyle(style = SpanStyle(fontSize = 50.0.sp)) {
-//                                append("관리자")
-//                            }
-//                            withStyle(
-//                                style = SpanStyle(
-//                                    fontSize = 50.0.sp,
-//                                    letterSpacing = 10.0.sp
-//                                )
-//                            ) {
-//                                append(" ")
-//                            }
-//                            withStyle(style = SpanStyle(fontSize = 50.0.sp)) {
-//                                append("로그인")
-//                            }
-//                        },
-//                        modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
-//                    )
-//                }
+                    var idtext by remember { mutableStateOf("") }
+                    var pwtext by remember { mutableStateOf("") }
+                    val onidValueChange = { it: String ->
+                        idtext = it
+                    }
+                    val onpwValueChange = { it: String ->
+                        pwtext = it
+                    }
+                    CustomAuth(
+                        idtext = idtext,
+                        pwtext = pwtext,
+                        onidValueChange = onidValueChange,
+                        onpwValueChange = onpwValueChange,
+                        navController = navController
+                    )
                 }
             }
         }
 
-            composable("CafeInfo") {
-                //CafeInfo()
+            composable("Admin") {
+                val context = LocalContext.current                val collectionName = "Upload_news"
+                val documentName = "ARAM"
+                val fieldName = "news"
+                FirebaseApp.initializeApp(context)
+                val db = FirebaseFirestore.getInstance()
+                val upNews = db.collection(collectionName).document(documentName)
+                var newstext by remember { mutableStateOf("") }
+                val onnewsValueChange = { it: String ->
+                    newstext = it
+                }
+                CustomAdmin(
+
+                    newstext = newstext,
+                    onnewsValueChange = onnewsValueChange,
+                    onUploadPicTapped = {launcher.launch(createOpenDocumentIntent())},
+                    onUploadNewsTapped = {upNews.update(fieldName, newstext)}
+                )
             }
+    }
+}
+private fun createOpenDocumentIntent(): Intent {
+    return Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+        addCategory(Intent.CATEGORY_OPENABLE)
+        type = "image/*"
+    }
+}
+
+}
 
             composable("LoginPage") {
-                //CustomAuth()
+
             }
         }
     }
@@ -124,7 +155,9 @@ fun ShowCustomDelayLoadingView() {
                 onMenuAram = {},
                 onMenuEdu1 = {},
                 onMenuEdu2 = {},
-                modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
+                modifier = Modifier
+                    .rowWeight(1.0f)
+                    .columnWeight(1.0f)
             )
         }
     }

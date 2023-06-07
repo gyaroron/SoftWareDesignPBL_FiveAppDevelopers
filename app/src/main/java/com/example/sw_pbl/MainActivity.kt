@@ -1,9 +1,11 @@
 package com.example.sw_pbl
 
 import CustomNavi
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,11 +34,26 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.sw_pbl.ui.theme.SW_PBLTheme
+import com.google.firebase.storage.FirebaseStorage
 import com.google.relay.compose.BoxScopeInstance.columnWeight
 import com.google.relay.compose.BoxScopeInstance.rowWeight
 import com.google.relay.compose.RelayContainer
 
 class MainActivity : ComponentActivity() {
+
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val selectedImageUri = result.data?.data
+            if (selectedImageUri != null) {
+                val storageReference = FirebaseStorage.getInstance().getReference("testpicture/testImage.png")
+                val contentResolver = applicationContext.contentResolver
+                val inputStream = contentResolver.openInputStream(selectedImageUri)
+                if (inputStream != null) {
+                    storageReference.putStream(inputStream)
+                }
+            }
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

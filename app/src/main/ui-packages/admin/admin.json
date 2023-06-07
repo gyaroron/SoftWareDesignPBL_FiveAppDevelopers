@@ -1,0 +1,588 @@
+{
+  "name": "admin",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "Wb5PRGhqieMD8IPNs7nxRy",
+    "node": "1019:407",
+    "version": "3616965540",
+    "component-id": "247f034a7435442100ce5e3c3b5a744c03bf8fba"
+  },
+  "default": "admin",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Group 18"
+      },
+      {
+        "type": "group",
+        "id": "loadingview_bg"
+      },
+      {
+        "type": "text",
+        "id": "title_loadingview"
+      },
+      {
+        "type": "group",
+        "id": "reset_all"
+      },
+      {
+        "type": "text",
+        "id": "title_loadingview1"
+      },
+      {
+        "type": "text",
+        "id": "title_loadingview2"
+      },
+      {
+        "type": "group",
+        "id": "upload_news"
+      },
+      {
+        "type": "group",
+        "id": "upload_pic"
+      },
+      {
+        "type": "group",
+        "id": "frame_login"
+      },
+      {
+        "type": "group",
+        "id": "login_txtbox"
+      },
+      {
+        "type": "text",
+        "id": "txt_login"
+      },
+      {
+        "type": "group",
+        "id": "login_txtbox1"
+      },
+      {
+        "type": "text",
+        "id": "txt_login1"
+      },
+      {
+        "type": "image",
+        "id": "free-icon-photo-camera-interface-symbol-for-button-45010 1"
+      },
+      {
+        "type": "group",
+        "id": "upload_pic_synth"
+      },
+      {
+        "type": "group",
+        "id": "head_login"
+      },
+      {
+        "type": "image",
+        "id": "logo_login"
+      }
+    ],
+    "modes": {
+      "admin": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "Group 18"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "Group 18",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "360.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "640.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "loadingview_bg",
+              "title_loadingview",
+              "reset_all",
+              "title_loadingview1",
+              "title_loadingview2",
+              "upload_news",
+              "upload_pic",
+              "frame_login"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "loadingview_bg",
+            "is-structured": "false",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            }
+          },
+          {
+            "id": "title_loadingview",
+            "margin": {
+              "left": "132.99951171875",
+              "top": "349.3994140625",
+              "right": "130.00048828125",
+              "bottom": "255.6005859375"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "text-content": "메뉴 사진",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-size": "24.0",
+            "line-height": "1.439453125",
+            "typeface": "Istok Web"
+          },
+          {
+            "id": "reset_all",
+            "margin": {
+              "left": "19.0",
+              "top": "524.0",
+              "right": "17.0",
+              "bottom": "76.0"
+            },
+            "border-radius": "10.0",
+            "tap-handler": "$on reset_all tapped2",
+            "stroke-alignment": "center",
+            "children": [
+              "login_txtbox"
+            ],
+            "item-spacing": "8.0",
+            "background-color": {
+              "alpha": "0.6196078431372549",
+              "hue": "0.0",
+              "saturation": "1.0",
+              "value": "0.5098039215686274"
+            }
+          },
+          {
+            "id": "title_loadingview1",
+            "margin": {
+              "left": "136.99951171875",
+              "top": "133.4013671875",
+              "right": "134.00048828125",
+              "bottom": "471.5986328125"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "text-content": "공지사항",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align-vertical": "center",
+            "text-size": "24.0",
+            "line-height": "1.439453125",
+            "typeface": "Istok Web"
+          },
+          {
+            "id": "title_loadingview2",
+            "margin": {
+              "left": "99.0",
+              "top": "61.0",
+              "right": "18.0",
+              "bottom": "515.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "annotated-text-content": {
+              "text": " 관리자입니다. ",
+              "annotated-text-span-list": [
+                {
+                  "span-start": "0",
+                  "span-length": "1",
+                  "annotated-text-style": {
+                    "font-weight": "700.0",
+                    "typeface": "Sansita"
+                  }
+                },
+                {
+                  "span-start": "1",
+                  "span-length": "7",
+                  "annotated-text-style": {
+                    "font-weight": "400.0",
+                    "text-size": "24.0",
+                    "typeface": "Sansita"
+                  }
+                },
+                {
+                  "span-start": "8",
+                  "span-length": "1",
+                  "annotated-text-style": {
+                    "font-weight": "400.0",
+                    "typeface": "Sansita"
+                  }
+                }
+              ]
+            },
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "right",
+            "text-align-vertical": "center",
+            "text-size": "32.0",
+            "line-height": "1.171875",
+            "typeface": "DIN Alternate"
+          },
+          {
+            "id": "upload_news",
+            "border-radius": "10.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "18.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "292.0"
+              }
+            },
+            "tap-handler": "$on upload_news tapped",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "325.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "50.0"
+              }
+            },
+            "stroke-alignment": "center",
+            "main-axis-align": "end",
+            "children": [
+              "login_txtbox1"
+            ],
+            "item-spacing": "8.0",
+            "background-color": {
+              "alpha": "0.6196078431372549",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "upload_pic",
+            "margin": {
+              "left": "19.0",
+              "right": "17.0"
+            },
+            "border-radius": "10.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "131.0"
+              }
+            },
+            "tap-handler": "$on upload_pic tapped",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "116.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "free-icon-photo-camera-interface-symbol-for-button-45010 1",
+              "upload_pic_synth"
+            ],
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "276.0000000000001",
+              "saturation": "0.04166666666666664",
+              "value": "0.9411764705882353"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "frame_login",
+            "padding": {
+              "top": "8.0"
+            },
+            "margin": {
+              "left": "18.99951171875",
+              "right": "18.00048828125",
+              "bottom": "598.400390625"
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "head_login"
+            ],
+            "item-spacing": "25.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "login_txtbox",
+            "padding": {
+              "left": "24.0",
+              "top": "10.0",
+              "right": "24.0",
+              "bottom": "10.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "txt_login"
+            ],
+            "item-spacing": "8.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "txt_login",
+            "font-weight": "500.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "내용 전체삭제",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": "20.0"
+          },
+          {
+            "id": "login_txtbox1",
+            "padding": {
+              "left": "24.0",
+              "top": "10.0",
+              "right": "24.0",
+              "bottom": "10.0"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "txt_login1"
+            ],
+            "item-spacing": "8.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "txt_login1",
+            "font-weight": "500.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "text-content": "등록",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": "20.0"
+          },
+          {
+            "id": "free-icon-photo-camera-interface-symbol-for-button-45010 1",
+            "opacity": "0.6000000238418579",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.5"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "100.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "77.0"
+              }
+            },
+            "image-content": "free_icon_photo_camera_interface_symbol_for_button_45010_1.png",
+            "scale": "contain"
+          },
+          {
+            "id": "upload_pic_synth",
+            "opacity": "100.0",
+            "padding": {
+              "top": "10.0",
+              "bottom": "51.0"
+            },
+            "border-radius": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "324.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": "116.0"
+              }
+            },
+            "main-axis-align": "start",
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "head_login",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "logo_login"
+            ],
+            "item-spacing": "8.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "logo_login",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "image-content": "logo_login.jpeg",
+            "scale": "contain"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "on reset_all tapped2": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "on upload_news tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "on upload_pic tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "admin",
+      "size": {
+        "width": 360.0,
+        "height": 640.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
