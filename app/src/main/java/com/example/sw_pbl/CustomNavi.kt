@@ -1,4 +1,3 @@
-
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -27,7 +26,8 @@ fun CustomNavi() {
         composable("Loading") {
             CustomDelayLoadingView(
                 modifier= Modifier.rowWeight(1.0f).columnWeight(1.0f),
-                navController= navController)
+                navController= navController
+            )
         }
         composable("Mainview") {
             MaterialTheme {
