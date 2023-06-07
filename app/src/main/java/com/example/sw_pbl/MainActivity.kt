@@ -50,10 +50,3 @@ class MainActivity : ComponentActivity() {
 
 
 
-@Preview(showSystemUi = true)
-@Composable
-fun MainViewEx2Preview() {
-    SW_PBLTheme {
-
-    }
-}
