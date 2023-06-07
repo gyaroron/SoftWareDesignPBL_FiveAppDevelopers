@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "626775745728",
-    "project_id": "swpbl-2e2c8",
-    "storage_bucket": "swpbl-2e2c8.appspot.com"
+    "project_number": "272767296759",
+    "project_id": "hjpbltest",
+    "storage_bucket": "hjpbltest.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:626775745728:android:ccc7a6778d07b80f7eb925",
+        "mobilesdk_app_id": "1:272767296759:android:2057fa488f1854235bdff2",
         "android_client_info": {
           "package_name": "com.example.sw_pbl"
         }
       },
       "oauth_client": [
         {
-          "client_id": "626775745728-fqfmpvs05fceg57pv2eumsn693us4cah.apps.googleusercontent.com",
+          "client_id": "272767296759-fnfna0r14hlhhe1g9h9tag7ohcl68f10.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCkz_qjjKGK3daOaLEiep5gJ_pJ5kI2mM0"
+          "current_key": "AIzaSyCgCuN_7SFwLMkeeuKqOfu15sk4VT7G3LM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "626775745728-fqfmpvs05fceg57pv2eumsn693us4cah.apps.googleusercontent.com",
+              "client_id": "272767296759-fnfna0r14hlhhe1g9h9tag7ohcl68f10.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
