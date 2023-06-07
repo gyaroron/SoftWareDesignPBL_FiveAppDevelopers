@@ -54,6 +54,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainViewEx2Preview() {
     SW_PBLTheme {
-//        MainViewEx2()
+
     }
 }
