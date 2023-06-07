@@ -1,0 +1,631 @@
+{
+  "name": "mainview",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "Wb5PRGhqieMD8IPNs7nxRy",
+    "node": "1040:768",
+    "version": "3613828055",
+    "component-id": "c0210a7a6141b33db12dfc7b6e56d6b270109a54"
+  },
+  "default": "mainview",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 32"
+      },
+      {
+        "type": "group",
+        "id": "mainmenu_re"
+      },
+      {
+        "type": "group",
+        "id": "head_re"
+      },
+      {
+        "type": "group",
+        "id": "menu_1"
+      },
+      {
+        "type": "group",
+        "id": "menu_2"
+      },
+      {
+        "type": "group",
+        "id": "menu_3"
+      },
+      {
+        "type": "group",
+        "id": "menu_4"
+      },
+      {
+        "type": "image",
+        "id": "login_re"
+      },
+      {
+        "type": "image",
+        "id": "logo_re"
+      },
+      {
+        "type": "group",
+        "id": "head_re_synth"
+      },
+      {
+        "type": "image",
+        "id": "img_1"
+      },
+      {
+        "type": "text",
+        "id": "txt_1"
+      },
+      {
+        "type": "image",
+        "id": "img_2"
+      },
+      {
+        "type": "text",
+        "id": "txt_2"
+      },
+      {
+        "type": "image",
+        "id": "img_3"
+      },
+      {
+        "type": "text",
+        "id": "txt_3"
+      },
+      {
+        "type": "image",
+        "id": "img_4"
+      },
+      {
+        "type": "text",
+        "id": "txt_4"
+      }
+    ],
+    "modes": {
+      "mainview": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "Rectangle 32",
+              "mainmenu_re"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Rectangle 32",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_32.svg"
+          },
+          {
+            "id": "mainmenu_re",
+            "padding": {
+              "left": "10.0",
+              "top": "8.331161499023438",
+              "right": "10.0"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "640.0"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "head_re",
+              "menu_1",
+              "menu_2",
+              "menu_3",
+              "menu_4"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "head_re",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "46.0"
+              }
+            },
+            "is-structured": "false",
+            "children": [
+              "login_re",
+              "logo_re",
+              "head_re_synth"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "menu_1",
+            "padding": {
+              "left": "10.413951873779297",
+              "top": "12.0",
+              "right": "10.413951873779297",
+              "bottom": "12.0"
+            },
+            "border-radius": "10.0",
+            "tap-handler": "$onMenuJA",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "114.5537109375"
+              }
+            },
+            "stroke-width": "1.0413951873779297",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "img_1",
+              "txt_1"
+            ],
+            "item-spacing": "31.24185562133789",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "menu_2",
+            "padding": {
+              "left": "10.413951873779297",
+              "top": "12.0",
+              "right": "10.413951873779297",
+              "bottom": "12.0"
+            },
+            "border-radius": "10.0",
+            "tap-handler": "$onMenuAram",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "114.5537109375"
+              }
+            },
+            "stroke-width": "1.0413951873779297",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "img_2",
+              "txt_2"
+            ],
+            "item-spacing": "31.24185562133789",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "menu_3",
+            "padding": {
+              "left": "10.413951873779297",
+              "top": "12.0",
+              "right": "10.413951873779297",
+              "bottom": "12.0"
+            },
+            "border-radius": "10.0",
+            "tap-handler": "$onMenuEdu1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "114.5537109375"
+              }
+            },
+            "stroke-width": "1.0413951873779297",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "img_3",
+              "txt_3"
+            ],
+            "item-spacing": "31.24185562133789",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "menu_4",
+            "padding": {
+              "left": "10.413951873779297",
+              "top": "12.0",
+              "right": "10.413951873779297",
+              "bottom": "12.0"
+            },
+            "border-radius": "10.0",
+            "tap-handler": "$onMenuEdu2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "114.5537109375"
+              }
+            },
+            "stroke-width": "1.0413951873779297",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "img_4",
+              "txt_4"
+            ],
+            "item-spacing": "31.24185562133789",
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            },
+            "clip-content": "false"
+          },
+          {
+            "id": "login_re",
+            "border-radius": "25.0",
+            "alignment": {
+              "horizontal": {
+                "attachment": "end",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "7.6689453125"
+              }
+            },
+            "tap-handler": "$onLoginAdmin",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "30.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "30.0"
+              }
+            },
+            "image-content": "login_re.png",
+            "scale": "contain"
+          },
+          {
+            "id": "logo_re",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "168.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "46.0"
+              }
+            },
+            "image-content": "logo_re.jpeg",
+            "scale": "contain"
+          },
+          {
+            "id": "head_re_synth",
+            "opacity": "100.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "340.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": "46.0"
+              }
+            },
+            "arrangement": "row",
+            "clip-content": "false"
+          },
+          {
+            "id": "img_1",
+            "border-radius": "8.331161499023438",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              }
+            },
+            "image-content": "img_1.jpeg",
+            "scale": "cover"
+          },
+          {
+            "id": "txt_1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "114.553466796875"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "text-content": "중앙 식당",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "20.827903747558594",
+            "line-height": "1.4394531228536733",
+            "typeface": "Istok Web"
+          },
+          {
+            "id": "img_2",
+            "border-radius": "8.331161499023438",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              }
+            },
+            "image-content": "img_2.jpeg",
+            "scale": "cover"
+          },
+          {
+            "id": "txt_2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "114.553466796875"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "text-content": "아람관",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "20.827903747558594",
+            "line-height": "1.4394531228536733",
+            "typeface": "Istok Web"
+          },
+          {
+            "id": "img_3",
+            "border-radius": "8.331161499023438",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              }
+            },
+            "image-content": "img_3.jpeg",
+            "scale": "cover"
+          },
+          {
+            "id": "txt_3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "text-content": "교육문화 1층 식당",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "20.827903747558594",
+            "line-height": "1.4394531228536733",
+            "typeface": "Istok Web"
+          },
+          {
+            "id": "img_4",
+            "border-radius": "8.331161499023438",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "83.3115234375"
+              }
+            },
+            "image-content": "img_3.jpeg",
+            "scale": "cover"
+          },
+          {
+            "id": "txt_4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "200.9892578125"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "font-weight": "700.0",
+            "color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.2823529411764706"
+            },
+            "text-content": "교육문화 2층 식당",
+            "overflow": "visible",
+            "max-lines": "-1",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": "20.827903747558594",
+            "line-height": "1.4394531228536733",
+            "typeface": "Istok Web"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onMenuJA": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onMenuAram": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onMenuEdu1": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onMenuEdu2": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "onLoginAdmin": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "mainview",
+      "size": {
+        "width": 360.0,
+        "height": 640.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
