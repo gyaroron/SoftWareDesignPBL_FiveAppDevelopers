@@ -149,6 +149,7 @@ fun CustomNavi() {
 
             composable("Ja") {
                 CustomPageview(
+                    // 건물 외관 버튼
                     onLocPg1Tapped = {
                         navController.navigate("Datacen")
                     },

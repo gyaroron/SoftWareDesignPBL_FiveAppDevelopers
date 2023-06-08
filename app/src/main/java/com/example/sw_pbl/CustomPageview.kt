@@ -1,5 +1,6 @@
 package com.example.sw_pbl.user
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.scrollable
@@ -27,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,9 +40,14 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberImagePainter
 import com.example.sw_pbl.R
 import com.example.sw_pbl.page1.istokWeb
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 import com.google.relay.compose.ColumnScope
 import com.google.relay.compose.MainAxisAlignment
 import com.google.relay.compose.RelayContainer
@@ -51,6 +58,7 @@ import com.google.relay.compose.RelayText
 import com.google.relay.compose.RelayVector
 import com.google.relay.compose.relayDropShadow
 import com.google.relay.compose.tappable
+import kotlinx.coroutines.launch
 
 /**
  * This composable was generated from the UI Package 'pageview'.
@@ -62,6 +70,22 @@ fun CustomPageview(
     onLocPg1Tapped: () -> Unit = {},
     newsadmin: String
 ) {
+    val storage: FirebaseStorage = Firebase.storage
+    val storageRef: StorageReference = storage.reference
+    val imgRef: StorageReference = storageRef.child("${newsadmin}/foodImage.png")
+
+    val scope = rememberCoroutineScope()
+    val imageUrl = remember { mutableStateOf("") }
+
+    LaunchedEffect(imgRef) {
+        scope.launch {
+            imgRef.downloadUrl.addOnSuccessListener {
+                imageUrl.value = it.toString()
+            }
+        }
+    }
+
+
     TopLevel(modifier = modifier) {
         FramePg1(
             modifier = Modifier
@@ -93,6 +117,7 @@ fun CustomPageview(
                 ) {
                     AnnPg2(modifier = Modifier.rowWeight(1.0f))
                 }
+
                 LocPg1(
                     onLocPg1Tapped = onLocPg1Tapped,
                     modifier = Modifier.boxAlign(
@@ -105,6 +130,16 @@ fun CustomPageview(
                 ) {
                     LoctxtPg1()
                 }
+                if (imageUrl.value.isNotEmpty()) {
+                    Image(
+                        painter = rememberImagePainter(data = imageUrl.value),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .fillMaxWidth(1.0f)
+                            .requiredHeight(181.dp)
+                    )
+                }
+
             }
         }
     }
