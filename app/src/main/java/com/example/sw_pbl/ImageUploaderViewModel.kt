@@ -16,10 +16,11 @@ class ImageUploaderViewModel: ViewModel() {
     private val _uploadState = mutableStateOf<UploadState>(UploadState.Idle)
     val uploadState: State<UploadState> = _uploadState
 
-    fun uploadImage(contentResolver: ContentResolver, imageUri: Uri) {
+    fun uploadImage(contentResolver: ContentResolver, imageUri: Uri, elem: String) {
         viewModelScope.launch {
             _uploadState.value = UploadState.Uploading
-            val storageReference = FirebaseStorage.getInstance().getReference("testpicture/testImage.png")
+            val storagePath = "${elem}/foodImage.png"
+            val storageReference = FirebaseStorage.getInstance().getReference(storagePath)
             val inputStream = contentResolver.openInputStream(imageUri)
             if (inputStream != null) {
                 storageReference.putStream(inputStream)

@@ -63,6 +63,8 @@ import com.google.relay.compose.tappable
  * This composable was generated from the UI Package 'admin'.
  * Generated code; do not edit directly
  */
+
+
 @Composable
 fun CustomAdmin(
     context: Context,
@@ -78,6 +80,13 @@ fun CustomAdmin(
     newstext: String,
     onnewsValueChange: (String) -> Unit
 ) {
+    val inputMapping = mapOf(
+        "ARAM" to "아람관",
+        "EDU1" to "교문센 1층",
+        "EDU2" to "교문센 2층",
+        "JA1" to "중앙식당"
+    )
+    val outputName = inputMapping[documentName] ?: "Unknown input"
     //moved code
     FirebaseApp.initializeApp(context)
 
@@ -107,12 +116,16 @@ fun CustomAdmin(
                     TxtLogin()
                 }
             }
-            TitleLoadingview1(modifier = Modifier
-                .rowWeight(1.0f)
-                .columnWeight(1.0f))
-            TitleLoadingview2(modifier = Modifier
-                .rowWeight(1.0f)
-                .columnWeight(1.0f))
+            TitleLoadingview1(
+                modifier = Modifier
+                            .rowWeight(1.0f)
+                            .columnWeight(1.0f)
+            )
+            TitleLoadingview2(
+                modifier = Modifier
+                            .rowWeight(1.0f)
+                            .columnWeight(1.0f)
+            )
             UploadNews(
                 onUploadNewsTapped = onUploadNewsTapped,
                 modifier = Modifier.boxAlign(
@@ -158,7 +171,7 @@ fun CustomAdmin(
                 }
             }
             NewsTextField(newstext = newstext, onnewsValueChange = onnewsValueChange)
-            AdminTitle()
+            AdminTitle(outputname = outputName)
         }
     }
 }
@@ -340,7 +353,9 @@ fun TitleLoadingview1(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TitleLoadingview2(modifier: Modifier = Modifier) {
+fun TitleLoadingview2(
+    modifier: Modifier = Modifier
+    ) {
     RelayText(
         content = buildAnnotatedString {
             withStyle(
@@ -349,7 +364,7 @@ fun TitleLoadingview2(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight(700.0.toInt())
                 )
             ) {
-                append(" ")
+                append("")
             }
             withStyle(
                 style = SpanStyle(
@@ -655,9 +670,9 @@ fun NewsTextField(
 }
 
 @Composable
-fun AdminTitle(modifier: Modifier = Modifier){
+fun AdminTitle(outputname: String, modifier: Modifier = Modifier){
     RelayText(
-        content = "예시",
+        content = outputname,
         fontSize = 30.0.sp,
         fontFamily = istokWeb,
         color = Color(

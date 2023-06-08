@@ -1,5 +1,7 @@
 import android.widget.Toast
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import com.google.firebase.firestore.FirebaseFirestore
 import androidx.navigation.NavController
@@ -14,7 +16,6 @@ fun CustomAuth(
     navController: NavController
     ) {
 
-
     val context = LocalContext.current
     val db = FirebaseFirestore.getInstance()
     val accountCollectionName = "login_account" // 파베 hjtestpbl 컬렉션
@@ -28,9 +29,15 @@ fun CustomAuth(
                         val id = document.getString("ID")
                         val pw = document.getString("PW")
                         if (id == idtext && pw == pwtext) {
-                            Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show()
-                            navController.navigate("Admin")
+                            //(,document.getString("route"))
 
+                            Toast.makeText(
+                                context,
+                                document.getString("route"),
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            navController.navigate("Admin")
                         }
                     }
                 }

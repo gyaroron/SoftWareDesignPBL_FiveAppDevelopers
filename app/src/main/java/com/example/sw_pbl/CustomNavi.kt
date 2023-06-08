@@ -27,13 +27,20 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.compositionLocalOf
 import com.example.sw_pbl.ImageUploaderViewModel
+import com.example.sw_pbl.customlogin.CustomLoginviewS8
+
+val LocalTargetName = compositionLocalOf { mutableStateOf("") }
 
 @Composable
 fun CustomNavi() {
 
     val navController = rememberNavController()
     var newstext by remember { mutableStateOf("") }
+    var text by remember { mutableStateOf("") }
+    val targetName = LocalTargetName.current
 
     NavHost(
         navController = navController,
@@ -66,7 +73,7 @@ fun CustomNavi() {
             }
 
         }
-
+        // 관리자 로그인 페이지
         composable("CustomLoginviewS8") {
             MaterialTheme {
                 RelayContainer {
@@ -74,6 +81,7 @@ fun CustomNavi() {
                     var pwtext by remember { mutableStateOf("") }
                     val onidValueChange = { it: String ->
                         idtext = it
+                        targetName.value = it
                     }
                     val onpwValueChange = { it: String ->
                         pwtext = it
@@ -84,11 +92,13 @@ fun CustomNavi() {
                         onidValueChange = onidValueChange,
                         onpwValueChange = onpwValueChange,
                         navController = navController
+
                     )
                 }
             }
         }
 
+        // 관리자 공지사항 및 사진 업로드 페이지
         composable("Admin") {
             val context = LocalContext.current
             val viewModel = remember { ImageUploaderViewModel() }
@@ -99,14 +109,15 @@ fun CustomNavi() {
                         if (selectedImageUri != null) {
                             viewModel.uploadImage(
                                 context.contentResolver,
-                                imageUri = selectedImageUri
+                                imageUri = selectedImageUri,
+                                elem = targetName.value
                             )
                         }
                     }
                 }
 
             val collectionName = "Upload_news"
-            val documentName = "ARAM"
+           var documentName = targetName.value
             val fieldName = "news"
             // FirebaseApp.initializeApp(context)
             val db = FirebaseFirestore.getInstance()
@@ -134,6 +145,26 @@ fun CustomNavi() {
             composable("LoginPage") {
 
             }
+
+    }
+
+    @Composable
+    fun UploadName(targetName: String, updateState: (String) -> Unit) {
+        // 상태 업데이트 로직
+        updateState(targetName)
+    }
+
+    @Composable
+    fun ChangeName(
+        name: String
+    ) {
+
+        // ProducerComposable을 호출하고, text 값을 업데이트한다
+        UploadName(
+            targetName = name
+        ) { updatedText ->
+            text = updatedText
+        }
 
     }
 
@@ -187,5 +218,6 @@ fun ShowCustomDelayLoadingView() {
         }
     }
 }
+
 
 

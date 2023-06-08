@@ -330,8 +330,8 @@ fun IdTextField(
         modifier = Modifier.boxAlign(
             alignment = Alignment.TopStart,
             offset = DpOffset(
-                x = 70.0.dp,
-                y = 410.0.dp
+                x = 42.0.dp,
+                y = 260.0.dp
             )
         )//: modifier
         ,
@@ -354,8 +354,8 @@ fun PWTextField(
         modifier = Modifier.boxAlign(
             alignment = Alignment.TopStart,
             offset = DpOffset(
-                x = 70.0.dp,
-                y = 510.0.dp
+                x = 42.0.dp,
+                y = 360.0.dp
             )
         ),
         value = pwtext,
