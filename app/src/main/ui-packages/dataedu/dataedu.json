@@ -1,0 +1,173 @@
+{
+  "name": "dataedu",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "Wb5PRGhqieMD8IPNs7nxRy",
+    "node": "1046:582",
+    "version": "3626276655",
+    "component-id": "ee64f3f0f8262f7127c466baf125cb0b44bf15f2"
+  },
+  "default": "dataedu",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 37"
+      },
+      {
+        "type": "group",
+        "id": "frame_edu"
+      },
+      {
+        "type": "group",
+        "id": "head_edu"
+      },
+      {
+        "type": "image",
+        "id": "map_edu"
+      },
+      {
+        "type": "image",
+        "id": "logo_login"
+      }
+    ],
+    "modes": {
+      "dataedu": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "Rectangle 37",
+              "frame_edu"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Rectangle 37",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_37.svg"
+          },
+          {
+            "id": "frame_edu",
+            "padding": {
+              "top": "8.0"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "640.0"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "head_edu",
+              "map_edu"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "head_edu",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "logo_login"
+            ],
+            "item-spacing": "8.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "map_edu",
+            "border-radius": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              }
+            },
+            "stroke-width": "1.0",
+            "stroke-alignment": "outside",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "image-content": "map_edu.png",
+            "scale": "cover"
+          },
+          {
+            "id": "logo_login",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "image-content": "logo_login.jpeg",
+            "scale": "contain"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "dataedu",
+      "size": {
+        "width": 360.0,
+        "height": 640.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

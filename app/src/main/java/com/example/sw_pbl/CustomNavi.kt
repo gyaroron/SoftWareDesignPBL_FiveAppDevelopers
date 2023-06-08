@@ -31,6 +31,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import com.example.sw_pbl.ImageUploaderViewModel
 import com.example.sw_pbl.customlogin.CustomLoginviewS8
+import com.example.sw_pbl.user.CustomPageview
 
 val LocalTargetName = compositionLocalOf { mutableStateOf("") }
 
@@ -142,8 +143,11 @@ fun CustomNavi() {
 
     }
 
-            composable("LoginPage") {
-
+            composable("Aram") {
+                CustomPageview(
+                    onLocPg1Tapped = {},
+                    newsadmin = "ARAM"
+                )
             }
 
     }

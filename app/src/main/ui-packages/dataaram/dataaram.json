@@ -1,0 +1,256 @@
+{
+  "name": "dataaram",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "Wb5PRGhqieMD8IPNs7nxRy",
+    "node": "1046:581",
+    "version": "3625946329",
+    "component-id": "50bff160b67c880933d4d2740e48fc7331c99032"
+  },
+  "default": "dataaram",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 35"
+      },
+      {
+        "type": "group",
+        "id": "frame_aram"
+      },
+      {
+        "type": "group",
+        "id": "head_aram"
+      },
+      {
+        "type": "image",
+        "id": "map_aram"
+      },
+      {
+        "type": "group",
+        "id": "piclist_aram"
+      },
+      {
+        "type": "image",
+        "id": "logo_aram"
+      },
+      {
+        "type": "vector",
+        "id": "pic1_aram"
+      },
+      {
+        "type": "vector",
+        "id": "pic2_aram"
+      },
+      {
+        "type": "vector",
+        "id": "pic3_Jaram"
+      }
+    ],
+    "modes": {
+      "dataaram": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "Rectangle 35",
+              "frame_aram"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "Rectangle 35",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "rectangle_35.svg"
+          },
+          {
+            "id": "frame_aram",
+            "padding": {
+              "top": "8.0"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "640.0"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "head_aram",
+              "map_aram",
+              "piclist_aram"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "head_aram",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "logo_aram"
+            ],
+            "item-spacing": "8.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "map_aram",
+            "border-radius": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              }
+            },
+            "stroke-width": "1.0",
+            "stroke-alignment": "outside",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "image-content": "map_aram.png",
+            "scale": "contain"
+          },
+          {
+            "id": "piclist_aram",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "pic1_aram",
+              "pic2_aram",
+              "pic3_Jaram"
+            ],
+            "item-spacing": "20.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "logo_aram",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "image-content": "logo_aram.jpeg",
+            "scale": "contain"
+          },
+          {
+            "id": "pic1_aram",
+            "border-radius": "16.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              }
+            },
+            "vector-content": "pic1_aram.svg"
+          },
+          {
+            "id": "pic2_aram",
+            "border-radius": "16.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              }
+            },
+            "vector-content": "pic2_aram.svg"
+          },
+          {
+            "id": "pic3_Jaram",
+            "border-radius": "16.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              }
+            },
+            "vector-content": "pic3_jaram.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "dataaram",
+      "size": {
+        "width": 360.0,
+        "height": 640.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

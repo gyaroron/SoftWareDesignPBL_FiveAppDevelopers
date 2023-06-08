@@ -1,0 +1,264 @@
+{
+  "name": "datacen",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "Wb5PRGhqieMD8IPNs7nxRy",
+    "node": "1046:580",
+    "version": "3625946329",
+    "component-id": "e87552c1ff77422745fc69a9cd80089651414bc1"
+  },
+  "default": "datacen",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "backg_loc"
+      },
+      {
+        "type": "group",
+        "id": "list_pg1"
+      },
+      {
+        "type": "group",
+        "id": "frame_loc"
+      },
+      {
+        "type": "vector",
+        "id": "breakfast_pg1"
+      },
+      {
+        "type": "vector",
+        "id": "lunch_pg1"
+      },
+      {
+        "type": "vector",
+        "id": "dinner_pg1"
+      },
+      {
+        "type": "group",
+        "id": "head_loc"
+      },
+      {
+        "type": "image",
+        "id": "map_JA"
+      },
+      {
+        "type": "image",
+        "id": "logo_login"
+      }
+    ],
+    "modes": {
+      "datacen": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": [
+              "backg_loc",
+              "list_pg1",
+              "frame_loc"
+            ],
+            "clip-content": "false"
+          },
+          {
+            "id": "backg_loc",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              }
+            },
+            "vector-content": "backg_loc.svg"
+          },
+          {
+            "id": "list_pg1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": "-210.0"
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": "356.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "breakfast_pg1",
+              "lunch_pg1",
+              "dinner_pg1"
+            ],
+            "item-spacing": "15.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "frame_loc",
+            "padding": {
+              "top": "8.0"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": "0.0"
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": "0.0"
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "360.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "640.0"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "head_loc",
+              "map_JA"
+            ],
+            "item-spacing": "10.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "breakfast_pg1",
+            "border-radius": "25.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              }
+            },
+            "vector-content": "breakfast_pg1.svg"
+          },
+          {
+            "id": "lunch_pg1",
+            "border-radius": "25.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              }
+            },
+            "vector-content": "lunch_pg1.svg"
+          },
+          {
+            "id": "dinner_pg1",
+            "border-radius": "25.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "250.0"
+              }
+            },
+            "vector-content": "dinner_pg1.svg"
+          },
+          {
+            "id": "head_loc",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "logo_login"
+            ],
+            "item-spacing": "8.0",
+            "clip-content": "false"
+          },
+          {
+            "id": "map_JA",
+            "border-radius": "10.0",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "280.0"
+              }
+            },
+            "stroke-width": "1.0",
+            "stroke-alignment": "outside",
+            "stroke-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "0.0"
+            },
+            "image-content": "map_ja.png",
+            "scale": "cover"
+          },
+          {
+            "id": "logo_login",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": "1.0"
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": "44.0"
+              }
+            },
+            "image-content": "logo_login.jpeg",
+            "scale": "contain"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "datacen",
+      "size": {
+        "width": 360.0,
+        "height": 640.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
