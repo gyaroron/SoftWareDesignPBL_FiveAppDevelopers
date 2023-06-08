@@ -1,9 +1,13 @@
 package com.example.sw_pbl
 
+//import CustomNavi
 import CustomNavi
 import android.app.Activity
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -24,10 +28,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
@@ -41,19 +50,7 @@ import com.google.relay.compose.RelayContainer
 
 class MainActivity : ComponentActivity() {
 
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val selectedImageUri = result.data?.data
-            if (selectedImageUri != null) {
-                val storageReference = FirebaseStorage.getInstance().getReference("testpicture/testImage.png")
-                val contentResolver = applicationContext.contentResolver
-                val inputStream = contentResolver.openInputStream(selectedImageUri)
-                if (inputStream != null) {
-                    storageReference.putStream(inputStream)
-                }
-            }
-        }
-    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -64,6 +61,18 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+//@Composable
+//fun PickImageFromGallery(){
+//    var imageUri by remember { mutableStateOf<Uri?>(null) }
+//    val context = LocalContext.current
+//    val bitmap = remember { mutableStateOf<Bitmap?>(null) }
+//
+//    val launcher = rememberLauncherForActivityResult(contract = ActivityResultContracts.GetContent()) { uri: Uri? ->
+//        imageUri = uri
+//    }
+//
+//}
 
 
 

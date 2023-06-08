@@ -29,8 +29,8 @@ fun CustomAuth(
                         val pw = document.getString("PW")
                         if (id == idtext && pw == pwtext) {
                             Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show()
-                            navController.navigate("")
-                            break
+                            navController.navigate("Admin")
+
                         }
                     }
                 }

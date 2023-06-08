@@ -1,6 +1,9 @@
 package com.example.sw_pbl.customadmin
 
 import android.content.Context
+import android.content.Intent
+import androidx.activity.compose.ManagedActivityResultLauncher
+import androidx.activity.result.ActivityResult
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -75,6 +78,7 @@ fun CustomAdmin(
     newstext: String,
     onnewsValueChange: (String) -> Unit
 ) {
+    //moved code
     FirebaseApp.initializeApp(context)
 
     TopLevel(modifier = modifier) {
@@ -159,28 +163,28 @@ fun CustomAdmin(
     }
 }
 
-@Preview(widthDp = 360, heightDp = 640)
-@Composable
-private fun CustomAdminPreview() {
-    var newstext by remember { mutableStateOf("") }
-    val onnewsValueChange = { it: String ->
-        newstext = it
-    }
-    MaterialTheme {
-        RelayContainer {
-            CustomAdmin(
-                onResetAllTapped2 = {},
-                onUploadNewsTapped = {},
-                onUploadPicTapped = {},
-                modifier = Modifier
-                    .rowWeight(1.0f)
-                    .columnWeight(1.0f),
-                newstext = newstext,
-                onnewsValueChange = onnewsValueChange
-            )
-        }
-    }
-}
+//@Preview(widthDp = 360, heightDp = 640)
+//@Composable
+//private fun CustomAdminPreview() {
+//    var newstext by remember { mutableStateOf("") }
+//    val onnewsValueChange = { it: String ->
+//        newstext = it
+//    }
+//    MaterialTheme {
+//        RelayContainer {
+//            CustomAdmin(
+//                onResetAllTapped2 = {},
+//                onUploadNewsTapped = {},
+//                onUploadPicTapped = {},
+//                modifier = Modifier
+//                    .rowWeight(1.0f)
+//                    .columnWeight(1.0f),
+//                newstext = newstext,
+//                onnewsValueChange = onnewsValueChange
+//            )
+//        }
+//    }
+//}
 
 @Composable
 fun LoadingviewBg(

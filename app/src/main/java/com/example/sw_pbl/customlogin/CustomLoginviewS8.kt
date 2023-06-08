@@ -55,7 +55,7 @@ fun CustomLoginviewS8(
     pwtext: String,
     onpwValueChange: (String) -> Unit
 ) {
-    com.example.sw_pbl.customadmin.TopLevel(modifier = modifier) {
+    TopLevel(modifier = modifier) {
         Group21(
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
@@ -83,8 +83,8 @@ fun CustomLoginviewS8(
                     )
                 )
             ) {
-                com.example.sw_pbl.customadmin.HeadLogin {
-                    com.example.sw_pbl.customadmin.LogoLogin(
+                HeadLogin {
+                    LogoLogin(
                         modifier = Modifier.boxAlign(
                             alignment = Alignment.TopStart,
                             offset = DpOffset(
@@ -116,7 +116,7 @@ fun CustomLoginviewS8(
                         )
                     )
                 ) {
-                    com.example.sw_pbl.customadmin.TxtLogin()
+                    TxtLogin()
                 }
 
                 IdTextField(idtext = idtext, onidValueChange = onidValueChange)
