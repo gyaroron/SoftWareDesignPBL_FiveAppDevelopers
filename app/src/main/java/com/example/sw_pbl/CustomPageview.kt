@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -31,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -41,13 +43,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
+import coil.size.Scale
 import com.example.sw_pbl.R
+import com.example.sw_pbl.page1.AnnPg1
+import com.example.sw_pbl.page1.AnnouncePg1
 import com.example.sw_pbl.page1.istokWeb
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
+import com.google.relay.compose.BoxScopeInstanceImpl.align
 import com.google.relay.compose.ColumnScope
 import com.google.relay.compose.MainAxisAlignment
 import com.google.relay.compose.RelayContainer
@@ -103,21 +109,35 @@ fun CustomPageview(
             }
             ScrollablePageView()
             Group22 {
+                // 텍스트 공지사항
                 AnnouncePg1 {
                     AnnPg1(modifier = Modifier.rowWeight(1.0f), firestore = FirebaseFirestore.getInstance(), newsadmin = newsadmin)
                 }
+               // Retrieve image(파이어스토리지에서 불러온 사진)
                 AnnouncePg2(
                     modifier = Modifier.boxAlign(
                         alignment = Alignment.TopStart,
                         offset = DpOffset(
                             x = 0.0.dp,
                             y = 110.0.dp
-                        )
+                       )
                     )
                 ) {
-                    AnnPg2(modifier = Modifier.rowWeight(1.0f))
-                }
+                    if (imageUrl.value.isNotEmpty()) {
+                        Image(
+                            painter = rememberImagePainter(data = imageUrl.value),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .height(180.dp)
+                                .fillMaxWidth()
 
+                        )
+                    } else {
+                        AnnPg2(modifier = Modifier.rowWeight(1.0f))
+                    }
+
+                }
+                // 건물 외관 버튼
                 LocPg1(
                     onLocPg1Tapped = onLocPg1Tapped,
                     modifier = Modifier.boxAlign(
@@ -130,16 +150,6 @@ fun CustomPageview(
                 ) {
                     LoctxtPg1()
                 }
-                if (imageUrl.value.isNotEmpty()) {
-                    Image(
-                        painter = rememberImagePainter(data = imageUrl.value),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .fillMaxWidth(1.0f)
-                            .requiredHeight(181.dp)
-                    )
-                }
-
             }
         }
     }
