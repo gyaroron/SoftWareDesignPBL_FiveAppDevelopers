@@ -29,8 +29,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
+import com.example.sw_pbl.CustomDataaram
 import com.example.sw_pbl.ImageUploaderViewModel
+import com.example.sw_pbl.cen.CustomDatacen
 import com.example.sw_pbl.customlogin.CustomLoginviewS8
+import com.example.sw_pbl.edu.CustomDataedu
 import com.example.sw_pbl.user.CustomPageview
 
 val LocalTargetName = compositionLocalOf { mutableStateOf("") }
@@ -62,10 +65,10 @@ fun CustomNavi() {
                         onLoginAdmin = {
                             navController.navigate("CustomLoginviewS8")
                         },
-                        onMenuJA = {},
-                        onMenuAram = {},
-                        onMenuEdu1 = {},
-                        onMenuEdu2 = {},
+                        onMenuJA = { navController.navigate("Ja") },
+                        onMenuAram = { navController.navigate("Aram") },
+                        onMenuEdu1 = { navController.navigate("Edu1") },
+                        onMenuEdu2 = { navController.navigate("Edu2") },
                         modifier = Modifier
                             .rowWeight(1.0f)
                             .columnWeight(1.0f)
@@ -143,12 +146,61 @@ fun CustomNavi() {
 
     }
 
+
+            composable("Ja") {
+                CustomPageview(
+                    onLocPg1Tapped = {
+                        navController.navigate("Datacen")
+                    },
+                    newsadmin = "JA1"
+                )
+            }
+
+
             composable("Aram") {
                 CustomPageview(
-                    onLocPg1Tapped = {},
+                    onLocPg1Tapped = {
+                                     navController.navigate("DataAram")
+                    },
                     newsadmin = "ARAM"
                 )
             }
+
+
+            composable("Edu1") {
+                CustomPageview(
+                    onLocPg1Tapped = {
+                        navController.navigate("DataEdu")
+                    },
+                    newsadmin = "EDU1"
+                )
+            }
+
+
+            composable("Edu2") {
+                CustomPageview(
+                    onLocPg1Tapped = {
+                        navController.navigate("DataEdu")
+                    },
+                    newsadmin = "EDU2"
+                )
+            }
+
+
+            composable("Datacen") {
+                CustomDatacen()
+            }
+
+
+            composable("DataAram") {
+                CustomDataaram()
+            }
+
+
+            composable("DataEdu") {
+                CustomDataedu()
+            }
+
 
     }
 
