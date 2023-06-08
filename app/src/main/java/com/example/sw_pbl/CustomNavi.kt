@@ -33,7 +33,7 @@ import com.example.sw_pbl.ImageUploaderViewModel
 fun CustomNavi() {
 
     val navController = rememberNavController()
-    val newstext = remember { mutableStateOf("") }
+    var newstext by remember { mutableStateOf("") }
 
     NavHost(
         navController = navController,
@@ -120,10 +120,12 @@ fun CustomNavi() {
                 fieldName = fieldName,
                 db = db,
                 upNews = upNews,
-                newstext = newstext.value,
-                onnewsValueChange = { value -> newstext.value = value },
+                newstext = newstext,
+                onnewsValueChange = { value ->
+                    newstext = value },
                 onUploadPicTapped = { launcher.launch(createOpenDocumentIntent()) },
-                onUploadNewsTapped = { upNews.update(fieldName, newstext) }
+                onUploadNewsTapped = {
+                    upNews.update(fieldName, newstext) }
             )
 
 
