@@ -188,10 +188,10 @@ fun BreakfastPg1(modifier: Modifier = Modifier, firestore: FirebaseFirestore) {
     val fieldValueState = remember { mutableStateOf("") }
 
     LaunchedEffect(Unit) {
-        val docRef = firestore.collection("Upload_news").document("ARAM")
+        val docRef = firestore.collection("").document("")
         docRef.get().addOnSuccessListener { documentSnapshot ->
             if (documentSnapshot.exists()) {
-                val field = documentSnapshot.getString("news")
+                val field = documentSnapshot.getString("")
                 field?.let {
                     // 필드 값을 가져왔으므로 표시할 수 있습니다.
                     fieldValueState.value = it

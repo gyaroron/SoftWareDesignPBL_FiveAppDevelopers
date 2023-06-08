@@ -236,7 +236,7 @@ private fun createOpenDocumentIntent(): Intent {
 @Composable
 fun CustomDelayLoadingView(modifier: Modifier = Modifier, navController: NavController) {
     LaunchedEffect(key1 = true) {
-        delay(2000) // simulate delay
+        delay(1000) // simulate delay
 
         navController.navigate("Mainview") {
 
