@@ -121,7 +121,7 @@ fun CustomNavi() {
                 }
 
             val collectionName = "Upload_news"
-           var documentName = targetName.value
+            var documentName = targetName.value
             val fieldName = "news"
             // FirebaseApp.initializeApp(context)
             val db = FirebaseFirestore.getInstance()
@@ -140,67 +140,82 @@ fun CustomNavi() {
                     newstext = value },
                 onUploadPicTapped = { launcher.launch(createOpenDocumentIntent()) },
                 onUploadNewsTapped = {
-                    upNews.update(fieldName, newstext) }
+                    upNews.update(fieldName, newstext) },
+                onResetAllTapped2 = {
+                    upNews.update(fieldName, "")
+                }
             )
 
 
-    }
+        }
 
 
-            composable("Ja") {
-                CustomPageview(
-                    // 건물 외관 버튼
-                    onLocPg1Tapped = {
-                        navController.navigate("Datacen")
-                    },
-                    newsadmin = "JA1"
-                )
-            }
+        composable("Ja") {
+            CustomPageview(
+                // 건물 외관 버튼
+                onLocPg1Tapped = {
+                    navController.navigate("Datacen")
+                },
+                newsadmin = "JA1",
+                breakfastFirestoreValue = "JA1",
+                lunchFirestoreValue = "JA1",
+                dinnerFirestoreValue = "JA1"
+            )
+        }
 
 
-            composable("Aram") {
-                CustomPageview(
-                    onLocPg1Tapped = {
-                                     navController.navigate("DataAram")
-                    },
-                    newsadmin = "ARAM"
-                )
-            }
+        composable("Aram") {
+            CustomPageview(
+                onLocPg1Tapped = {
+                    navController.navigate("DataAram")
+                },
+                newsadmin = "ARAM",
+                breakfastFirestoreValue = "ARAM",
+                lunchFirestoreValue = "ARAM",
+                dinnerFirestoreValue = "ARAM"
+            )
+        }
 
 
-            composable("Edu1") {
-                CustomPageview(
-                    onLocPg1Tapped = {
-                        navController.navigate("DataEdu")
-                    },
-                    newsadmin = "EDU1"
-                )
-            }
+        composable("Edu1") {
+            CustomPageview(
+                onLocPg1Tapped = {
+                    navController.navigate("DataEdu")
+                },
+                newsadmin = "EDU1",
+                breakfastFirestoreValue = "EDU1",
+                lunchFirestoreValue = "EDU1",
+                dinnerFirestoreValue = "EDU1"
+            )
+        }
 
 
-            composable("Edu2") {
-                CustomPageview(
-                    onLocPg1Tapped = {
-                        navController.navigate("DataEdu")
-                    },
-                    newsadmin = "EDU2"
-                )
-            }
+        composable("Edu2") {
+            CustomPageview(
+                onLocPg1Tapped = {
+                    navController.navigate("DataEdu")
+                },
+                newsadmin = "EDU2",
+                breakfastFirestoreValue = "EDU2",
+                lunchFirestoreValue = "EDU2",
+                dinnerFirestoreValue = "EDU2"
+            )
+        }
 
 
-            composable("Datacen") {
-                CustomDatacen()
-            }
+        composable("Datacen") {
+            CustomDatacen()
+        }
 
 
-            composable("DataAram") {
-                CustomDataaram()
-            }
+        composable("DataAram") {
+            CustomDataaram()
+        }
 
 
-            composable("DataEdu") {
-                CustomDataedu()
-            }
+        composable("DataEdu") {
+            CustomDataedu()
+        }
 
 
     }
@@ -250,7 +265,7 @@ fun CustomDelayLoadingView(modifier: Modifier = Modifier, navController: NavCont
     Loading(
         modifier = modifier
     )
- }
+}
 
 
 @Preview(showSystemUi = true)
@@ -275,6 +290,3 @@ fun ShowCustomDelayLoadingView() {
         }
     }
 }
-
-
-

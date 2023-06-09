@@ -74,7 +74,10 @@ import kotlinx.coroutines.launch
 fun CustomPageview(
     modifier: Modifier = Modifier,
     onLocPg1Tapped: () -> Unit = {},
-    newsadmin: String
+    newsadmin: String,
+    breakfastFirestoreValue: String,
+    lunchFirestoreValue: String,
+    dinnerFirestoreValue: String
 ) {
     val storage: FirebaseStorage = Firebase.storage
     val storageRef: StorageReference = storage.reference
@@ -107,20 +110,20 @@ fun CustomPageview(
             HeadPg1(modifier = Modifier.rowWeight(1.0f)) {
                 LogoPg1(modifier = Modifier.rowWeight(1.0f))
             }
-            ScrollablePageView()
+            ScrollablePageView(breakfastFirestoreValue, lunchFirestoreValue, dinnerFirestoreValue)
             Group22 {
                 // 텍스트 공지사항
                 AnnouncePg1 {
                     AnnPg1(modifier = Modifier.rowWeight(1.0f), firestore = FirebaseFirestore.getInstance(), newsadmin = newsadmin)
                 }
-               // Retrieve image(파이어스토리지에서 불러온 사진)
+                // Retrieve image(파이어스토리지에서 불러온 사진)
                 AnnouncePg2(
                     modifier = Modifier.boxAlign(
                         alignment = Alignment.TopStart,
                         offset = DpOffset(
                             x = 0.0.dp,
                             y = 110.0.dp
-                       )
+                        )
                     )
                 ) {
                     if (imageUrl.value.isNotEmpty()) {
@@ -184,14 +187,14 @@ fun HeadPg1(
 }
 
 @Composable
-fun BreakfastPg1(modifier: Modifier = Modifier, firestore: FirebaseFirestore) {
+fun BreakfastPg1(modifier: Modifier = Modifier, firestoreValue: String, firestore: FirebaseFirestore) {
     val fieldValueState = remember { mutableStateOf("") }
 
     LaunchedEffect(Unit) {
-        val docRef = firestore.collection("Upload_news").document("ARAM")
+        val docRef = firestore.collection("week_menu").document(firestoreValue)
         docRef.get().addOnSuccessListener { documentSnapshot ->
             if (documentSnapshot.exists()) {
-                val field = documentSnapshot.getString("news")
+                val field = documentSnapshot.getString("BREAK")
                 field?.let {
                     // 필드 값을 가져왔으므로 표시할 수 있습니다.
                     fieldValueState.value = it
@@ -201,8 +204,8 @@ fun BreakfastPg1(modifier: Modifier = Modifier, firestore: FirebaseFirestore) {
     }
     Box(
         modifier = modifier
-        .requiredWidth(340.0.dp)
-        .requiredHeight(161.0.dp)
+            .requiredWidth(340.0.dp)
+            .requiredHeight(161.0.dp)
     ) {
         RelayVector(
             vector = painterResource(R.drawable.page_1_breakfast_pg1),
@@ -215,7 +218,7 @@ fun BreakfastPg1(modifier: Modifier = Modifier, firestore: FirebaseFirestore) {
                 .verticalScroll(rememberScrollState())
         ){
             RelayText(
-                content = fieldValueState.value,
+                content = fieldValueState.value.replace(" ", "\n"),
                 fontFamily = istokWeb,
                 color = Color.Black,
                 modifier = Modifier
@@ -227,11 +230,25 @@ fun BreakfastPg1(modifier: Modifier = Modifier, firestore: FirebaseFirestore) {
 }
 
 @Composable
-fun LunchPg1(modifier: Modifier = Modifier) {
+fun LunchPg1(modifier: Modifier = Modifier, firestoreValue: String, firestore: FirebaseFirestore) {
+    val fieldValueState = remember { mutableStateOf("") }
+
+    LaunchedEffect(Unit) {
+        val docRef = firestore.collection("week_menu").document(firestoreValue)
+        docRef.get().addOnSuccessListener { documentSnapshot ->
+            if (documentSnapshot.exists()) {
+                val field = documentSnapshot.getString("LUNCH")
+                field?.let {
+                    // 필드 값을 가져왔으므로 표시할 수 있습니다.
+                    fieldValueState.value = it
+                }
+            }
+        }
+    }
     Box(
         modifier = modifier
-        .requiredWidth(340.0.dp)
-        .requiredHeight(161.0.dp)
+            .requiredWidth(340.0.dp)
+            .requiredHeight(161.0.dp)
     ) {
         RelayVector(
             vector = painterResource(R.drawable.page_1_lunch_pg1),
@@ -244,7 +261,7 @@ fun LunchPg1(modifier: Modifier = Modifier) {
                 .verticalScroll(rememberScrollState())
         ){
             RelayText(
-                content = "Lunch",
+                content = fieldValueState.value.replace(" ", "\n"),
                 fontFamily = istokWeb,
                 color = Color.Black,
                 modifier = Modifier
@@ -256,7 +273,21 @@ fun LunchPg1(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun DinnerPg1(modifier: Modifier = Modifier) {
+fun DinnerPg1(modifier: Modifier = Modifier, firestoreValue: String, firestore: FirebaseFirestore) {
+    val fieldValueState = remember { mutableStateOf("") }
+
+    LaunchedEffect(Unit) {
+        val docRef = firestore.collection("week_menu").document(firestoreValue)
+        docRef.get().addOnSuccessListener { documentSnapshot ->
+            if (documentSnapshot.exists()) {
+                val field = documentSnapshot.getString("DINNER")
+                field?.let {
+                    // 필드 값을 가져왔으므로 표시할 수 있습니다.
+                    fieldValueState.value = it
+                }
+            }
+        }
+    }
     Box(
         modifier = modifier
             .requiredWidth(340.0.dp)
@@ -273,7 +304,7 @@ fun DinnerPg1(modifier: Modifier = Modifier) {
                 .verticalScroll(rememberScrollState())
         ){
             RelayText(
-                content = "Dinner",
+                content = fieldValueState.value.replace(" ", "\n"),
                 fontFamily = istokWeb,
                 color = Color.Black,
                 modifier = Modifier
@@ -499,7 +530,11 @@ fun TopLevel(
 }
 
 @Composable
-fun ScrollablePageView() {
+fun ScrollablePageView(
+    breakfastFirestoreValue: String,
+    lunchFirestoreValue: String,
+    dinnerFirestoreValue: String
+) {
     LazyRow(modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.Center,
         contentPadding = PaddingValues(vertical = 0.dp)){
@@ -508,9 +543,9 @@ fun ScrollablePageView() {
         }
         item {
             ListPg1 {
-                BreakfastPg1(firestore = FirebaseFirestore.getInstance())
-                LunchPg1()
-                DinnerPg1()
+                BreakfastPg1(firestoreValue = breakfastFirestoreValue, firestore = FirebaseFirestore.getInstance())
+                LunchPg1(firestoreValue = lunchFirestoreValue, firestore = FirebaseFirestore.getInstance())
+                DinnerPg1(firestoreValue = dinnerFirestoreValue, firestore = FirebaseFirestore.getInstance())
             }
         }
         item {
